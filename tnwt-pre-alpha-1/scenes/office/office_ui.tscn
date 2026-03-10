@@ -1,0 +1,600 @@
+[gd_scene format=3 uid="uid://cvkkvmql51edp"]
+
+[ext_resource type="Script" uid="uid://d1dh6qebqaiw4" path="res://scenes/office/quit_game.gd" id="1_6asec"]
+[ext_resource type="Script" uid="uid://dxov437exv1iv" path="res://scenes/office/show_notepad.gd" id="1_owen4"]
+[ext_resource type="Texture2D" uid="uid://d335n4epxxd2o" path="res://assets/office/нотепаде.png" id="2_jehpo"]
+[ext_resource type="LabelSettings" uid="uid://cit4v5sny6gir" path="res://assets/themes/new_label_settings.tres" id="3_a7drs"]
+[ext_resource type="Script" uid="uid://bwsrhwruj7wqv" path="res://scenes/office/notepad.gd" id="3_guih1"]
+[ext_resource type="Texture2D" uid="uid://c6ap1lf4n2564" path="res://assets/extra/map_with_text.png" id="4_nnf6g"]
+[ext_resource type="Script" uid="uid://6bakhlhtbqiq" path="res://scenes/office/image_slideshow.gd" id="5_6asec"]
+[ext_resource type="Theme" uid="uid://htpkidr2rvjv" path="res://assets/themes/useless.tres" id="5_grqne"]
+[ext_resource type="Texture2D" uid="uid://b1idsgc0x7b8f" path="res://assets/office/zappyieeee.png" id="9_4lgsy"]
+[ext_resource type="AudioStream" uid="uid://uqg5a2sfmrdm" path="res://assets/office/zappy_shoot.mp3" id="10_c0ahb"]
+[ext_resource type="AudioStream" uid="uid://bidoben4tymac" path="res://assets/office/screamyyy.mp3" id="11_0mwk0"]
+[ext_resource type="Texture2D" uid="uid://culbvrsd2a7ml" path="res://assets/office/fiery-inferno-digital-representation-blazing-flames.png" id="12_x8sd0"]
+[ext_resource type="Texture2D" uid="uid://pymxdfvsan57" path="res://assets/office/Blood_Blur_1.png" id="13_x8sd0"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_rpqia"]
+font_size = 84
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_owen4"]
+font_size = 46
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Theme" id="Theme_owen4"]
+default_font_size = 50
+
+[sub_resource type="Theme" id="Theme_rpqia"]
+default_font_size = 70
+
+[sub_resource type="LabelSettings" id="LabelSettings_x8sd0"]
+font_size = 70
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Theme" id="Theme_jehpo"]
+default_font_size = 57
+
+[sub_resource type="LabelSettings" id="LabelSettings_jehpo"]
+font_size = 62
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Theme" id="Theme_guih1"]
+default_font_size = 40
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nnf6g"]
+bg_color = Color(0.9999997, 0.81892836, 0.37165517, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_guih1"]
+bg_color = Color(1, 0.81960785, 0.37254903, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jehpo"]
+bg_color = Color(0.9999997, 0.87269557, 0.577265, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_guih1"]
+font_size = 20
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Theme" id="Theme_nnf6g"]
+default_font_size = 30
+
+[sub_resource type="LabelSettings" id="LabelSettings_nnf6g"]
+font_size = 40
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Theme" id="Theme_grqne"]
+default_font_size = 20
+
+[sub_resource type="LabelSettings" id="LabelSettings_6asec"]
+font_size = 20
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_grqne"]
+font_size = 20
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_4lgsy"]
+font_size = 42
+font_color = Color(0, 0, 0, 0.21176471)
+
+[node name="office_ui" type="Control" unique_id=1126764209]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_owen4")
+
+[node name="topbar" type="VBoxContainer" parent="." unique_id=259022692]
+layout_mode = 0
+offset_right = 1150.0
+offset_bottom = 119.0
+mouse_filter = 2
+script = ExtResource("1_6asec")
+
+[node name="labely" type="Label" parent="topbar" unique_id=14831149]
+visible = false
+layout_mode = 2
+text = "Holding ESC..."
+label_settings = ExtResource("3_a7drs")
+
+[node name="temperature" type="Label" parent="topbar" unique_id=689313411]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+text = "20°"
+label_settings = SubResource("LabelSettings_rpqia")
+
+[node name="attack_info" type="VBoxContainer" parent="." unique_id=1988185383]
+layout_mode = 0
+offset_left = 815.0
+offset_top = 71.0
+offset_right = 1148.0
+offset_bottom = 283.0
+
+[node name="now_attacking" type="Label" parent="attack_info" unique_id=136359633]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 1
+text = "Now attacking:
+none"
+label_settings = SubResource("LabelSettings_owen4")
+
+[node name="Button" type="Button" parent="attack_info" unique_id=1652374234]
+layout_mode = 2
+size_flags_vertical = 3
+theme = SubResource("Theme_owen4")
+text = "Start!"
+
+[node name="buttons" type="HBoxContainer" parent="." unique_id=403610834]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -104.0
+grow_horizontal = 2
+grow_vertical = 0
+alignment = 1
+
+[node name="show_zappy" type="Button" parent="buttons" unique_id=454569107]
+layout_mode = 2
+size_flags_vertical = 4
+size_flags_stretch_ratio = 0.0
+theme = SubResource("Theme_rpqia")
+text = "zappy! :)"
+
+[node name="Control" type="Control" parent="buttons" unique_id=2049056840]
+custom_minimum_size = Vector2(20, 0)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="buttons" unique_id=2032341823]
+layout_mode = 2
+text = "[SPACE] - Tablet"
+label_settings = SubResource("LabelSettings_x8sd0")
+
+[node name="Control2" type="Control" parent="buttons" unique_id=961349355]
+custom_minimum_size = Vector2(20, 0)
+layout_mode = 2
+
+[node name="show_notepad" type="Button" parent="buttons" unique_id=1679847278]
+layout_mode = 2
+size_flags_horizontal = 8
+theme = SubResource("Theme_rpqia")
+text = "notepad"
+
+[node name="notepad_ui" type="CanvasLayer" parent="." unique_id=806647266]
+layer = 2
+visible = false
+
+[node name="notepad" type="TextureRect" parent="notepad_ui" unique_id=45529547]
+offset_left = 262.0
+offset_top = 55.0
+offset_right = 932.0
+offset_bottom = 645.0
+texture = ExtResource("2_jehpo")
+script = ExtResource("3_guih1")
+
+[node name="notepad_main" type="VBoxContainer" parent="notepad_ui/notepad" unique_id=1685398401]
+layout_mode = 0
+offset_left = 93.0
+offset_top = 93.0
+offset_right = 495.0
+offset_bottom = 591.0
+
+[node name="Control" type="Control" parent="notepad_ui/notepad/notepad_main" unique_id=735028614]
+custom_minimum_size = Vector2(0, 8)
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="notepad_ui/notepad/notepad_main" unique_id=2048333352]
+layout_mode = 2
+
+[node name="Control2" type="Control" parent="notepad_ui/notepad/notepad_main/HBoxContainer" unique_id=1409199623]
+custom_minimum_size = Vector2(9, 0)
+layout_mode = 2
+
+[node name="back_button" type="Button" parent="notepad_ui/notepad/notepad_main/HBoxContainer" unique_id=560534980]
+custom_minimum_size = Vector2(76, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme = SubResource("Theme_jehpo")
+text = "<"
+
+[node name="Control" type="Control" parent="notepad_ui/notepad/notepad_main/HBoxContainer" unique_id=1545038167]
+custom_minimum_size = Vector2(20, 0)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="notepad_ui/notepad/notepad_main/HBoxContainer" unique_id=205164994]
+layout_mode = 2
+text = "Notepad"
+label_settings = SubResource("LabelSettings_jehpo")
+
+[node name="Control2" type="Control" parent="notepad_ui/notepad/notepad_main" unique_id=987294036]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+
+[node name="attacks_notepad_button" type="Button" parent="notepad_ui/notepad/notepad_main" unique_id=728380180]
+layout_mode = 2
+theme = SubResource("Theme_guih1")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_nnf6g")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_guih1")
+theme_override_styles/hover = SubResource("StyleBoxFlat_jehpo")
+text = "Attacks"
+alignment = 0
+
+[node name="Label" type="Label" parent="notepad_ui/notepad/notepad_main/attacks_notepad_button" unique_id=1451422726]
+layout_mode = 0
+offset_right = 401.0
+offset_bottom = 55.0
+text = "> "
+horizontal_alignment = 2
+
+[node name="about_notepad_button" type="Button" parent="notepad_ui/notepad/notepad_main" unique_id=1812679833]
+layout_mode = 2
+theme = SubResource("Theme_guih1")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_nnf6g")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_guih1")
+theme_override_styles/hover = SubResource("StyleBoxFlat_jehpo")
+text = "About the game"
+alignment = 0
+
+[node name="Label" type="Label" parent="notepad_ui/notepad/notepad_main/about_notepad_button" unique_id=1518926332]
+layout_mode = 0
+offset_right = 401.0
+offset_bottom = 55.0
+text = "> "
+horizontal_alignment = 2
+
+[node name="extra_notepad_button" type="Button" parent="notepad_ui/notepad/notepad_main" unique_id=947137819]
+layout_mode = 2
+theme = SubResource("Theme_guih1")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_nnf6g")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_guih1")
+theme_override_styles/hover = SubResource("StyleBoxFlat_jehpo")
+text = "Extra"
+alignment = 0
+
+[node name="Label" type="Label" parent="notepad_ui/notepad/notepad_main/extra_notepad_button" unique_id=1655931826]
+layout_mode = 0
+offset_right = 401.0
+offset_bottom = 55.0
+text = "> "
+horizontal_alignment = 2
+
+[node name="Label" type="Label" parent="notepad_ui/notepad/notepad_main" unique_id=1760079880]
+layout_mode = 2
+text = "To exit the game,
+Press ESC"
+label_settings = SubResource("LabelSettings_guih1")
+
+[node name="notepad_attacks" type="VBoxContainer" parent="notepad_ui/notepad" unique_id=837593417]
+visible = false
+layout_mode = 1
+offset_left = 92.0
+offset_top = 96.0
+offset_right = 493.0
+offset_bottom = 610.0
+
+[node name="Control" type="Control" parent="notepad_ui/notepad/notepad_attacks" unique_id=1470965677]
+custom_minimum_size = Vector2(0, 8)
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="notepad_ui/notepad/notepad_attacks" unique_id=1911971929]
+layout_mode = 2
+
+[node name="Control2" type="Control" parent="notepad_ui/notepad/notepad_attacks/HBoxContainer" unique_id=1054921448]
+custom_minimum_size = Vector2(9, 0)
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="notepad_ui/notepad/notepad_attacks/HBoxContainer" unique_id=529122603]
+layout_mode = 2
+
+[node name="Control" type="Control" parent="notepad_ui/notepad/notepad_attacks/HBoxContainer/VBoxContainer" unique_id=677976410]
+custom_minimum_size = Vector2(0, 15)
+layout_mode = 2
+
+[node name="back_to_notepad_button" type="Button" parent="notepad_ui/notepad/notepad_attacks/HBoxContainer/VBoxContainer" unique_id=770587516]
+layout_mode = 2
+size_flags_horizontal = 4
+theme = SubResource("Theme_nnf6g")
+text = "< Notepad"
+
+[node name="Label" type="Label" parent="notepad_ui/notepad/notepad_attacks/HBoxContainer" unique_id=1552858987]
+layout_mode = 2
+text = "Attacks"
+label_settings = SubResource("LabelSettings_jehpo")
+
+[node name="Control2" type="Control" parent="notepad_ui/notepad/notepad_attacks" unique_id=1596190419]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="notepad_ui/notepad/notepad_attacks" unique_id=652035784]
+custom_minimum_size = Vector2(0, 370)
+layout_mode = 2
+follow_focus = true
+horizontal_scroll_mode = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="notepad_ui/notepad/notepad_attacks/ScrollContainer" unique_id=902892710]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="fanny_title" type="Label" parent="notepad_ui/notepad/notepad_attacks/ScrollContainer/VBoxContainer" unique_id=1411276805]
+layout_mode = 2
+text = "Fanny"
+label_settings = SubResource("LabelSettings_nnf6g")
+
+[node name="fanny_text" type="RichTextLabel" parent="notepad_ui/notepad/notepad_attacks/ScrollContainer/VBoxContainer" unique_id=584174384]
+layout_mode = 2
+theme = SubResource("Theme_grqne")
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+bbcode_enabled = true
+text = "Fanny is sitting on the table and sleeping, but when his attack begins, he begins to wake up little by little. As soon as the face becomes malevolent, press the button on his panel to make him fall asleep again.
+
+However, Fanny can not be turned off for a long time. While it is not powered, the temperature in the office rises (from 20° to 80°), which is why you will lose. So after you've calmed Fanny down, turn it back on."
+fit_content = true
+scroll_active = false
+
+[node name="liy_title" type="Label" parent="notepad_ui/notepad/notepad_attacks/ScrollContainer/VBoxContainer" unique_id=139392218]
+layout_mode = 2
+text = "Liy"
+label_settings = SubResource("LabelSettings_nnf6g")
+
+[node name="liy_text" type="RichTextLabel" parent="notepad_ui/notepad/notepad_attacks/ScrollContainer/VBoxContainer" unique_id=245166219]
+layout_mode = 2
+theme = SubResource("Theme_grqne")
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+bbcode_enabled = true
+text = "Unlike Fanny, she's hanging on the wall. When her face turns angry, just click on her 6 times and she will calm down."
+fit_content = true
+scroll_active = false
+
+[node name="notepad_about" type="VBoxContainer" parent="notepad_ui/notepad" unique_id=1249575210]
+visible = false
+layout_mode = 0
+offset_left = 92.0
+offset_top = 96.0
+offset_right = 493.0
+offset_bottom = 610.0
+
+[node name="Control" type="Control" parent="notepad_ui/notepad/notepad_about" unique_id=867373915]
+custom_minimum_size = Vector2(0, 8)
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="notepad_ui/notepad/notepad_about" unique_id=1568693687]
+layout_mode = 2
+
+[node name="Control2" type="Control" parent="notepad_ui/notepad/notepad_about/HBoxContainer" unique_id=35692540]
+custom_minimum_size = Vector2(9, 0)
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="notepad_ui/notepad/notepad_about/HBoxContainer" unique_id=352669383]
+layout_mode = 2
+
+[node name="Control" type="Control" parent="notepad_ui/notepad/notepad_about/HBoxContainer/VBoxContainer" unique_id=342270513]
+custom_minimum_size = Vector2(0, 15)
+layout_mode = 2
+
+[node name="back_to_notepad_button2" type="Button" parent="notepad_ui/notepad/notepad_about/HBoxContainer/VBoxContainer" unique_id=271928332]
+layout_mode = 2
+size_flags_horizontal = 4
+theme = SubResource("Theme_nnf6g")
+text = "< Notepad"
+
+[node name="Control3" type="Control" parent="notepad_ui/notepad/notepad_about/HBoxContainer" unique_id=1093827816]
+custom_minimum_size = Vector2(15, 0)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="notepad_ui/notepad/notepad_about/HBoxContainer" unique_id=308532653]
+layout_mode = 2
+text = "About"
+label_settings = SubResource("LabelSettings_jehpo")
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="notepad_ui/notepad/notepad_about" unique_id=2125733089]
+layout_mode = 2
+
+[node name="Control" type="Control" parent="notepad_ui/notepad/notepad_about/HBoxContainer2" unique_id=1299665474]
+custom_minimum_size = Vector2(97, 0)
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="notepad_ui/notepad/notepad_about/HBoxContainer2" unique_id=1843965105]
+layout_mode = 2
+text = "the game"
+label_settings = SubResource("LabelSettings_jehpo")
+
+[node name="Control2" type="Control" parent="notepad_ui/notepad/notepad_about" unique_id=1172727598]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="notepad_ui/notepad/notepad_about" unique_id=1508383391]
+custom_minimum_size = Vector2(0, 370)
+layout_mode = 2
+follow_focus = true
+horizontal_scroll_mode = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="notepad_ui/notepad/notepad_about/ScrollContainer" unique_id=1126286412]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="about_text" type="RichTextLabel" parent="notepad_ui/notepad/notepad_about/ScrollContainer/VBoxContainer" unique_id=143990262]
+layout_mode = 2
+theme = SubResource("Theme_grqne")
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+bbcode_enabled = true
+text = "This game is based on BFDI: TPOT and stands for \"Three Nights With Two\".
+
+In fact, you are currently in a hotel at the time of the episode BFDI: TPOT 9: \"Outbreak At Stake\" and you need to defend yourself from zombie objects.
+
+Expect more details in the next versions."
+fit_content = true
+scroll_active = false
+
+[node name="notepad_extra" type="VBoxContainer" parent="notepad_ui/notepad" unique_id=1269498033]
+visible = false
+layout_mode = 0
+offset_left = 92.0
+offset_top = 96.0
+offset_right = 493.0
+offset_bottom = 610.0
+
+[node name="Control" type="Control" parent="notepad_ui/notepad/notepad_extra" unique_id=353796564]
+custom_minimum_size = Vector2(0, 8)
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="notepad_ui/notepad/notepad_extra" unique_id=1891662250]
+layout_mode = 2
+
+[node name="Control2" type="Control" parent="notepad_ui/notepad/notepad_extra/HBoxContainer" unique_id=1815687660]
+custom_minimum_size = Vector2(9, 0)
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="notepad_ui/notepad/notepad_extra/HBoxContainer" unique_id=187186158]
+layout_mode = 2
+
+[node name="Control" type="Control" parent="notepad_ui/notepad/notepad_extra/HBoxContainer/VBoxContainer" unique_id=300906063]
+custom_minimum_size = Vector2(0, 15)
+layout_mode = 2
+
+[node name="back_to_notepad_button3" type="Button" parent="notepad_ui/notepad/notepad_extra/HBoxContainer/VBoxContainer" unique_id=2080120167]
+layout_mode = 2
+size_flags_horizontal = 4
+theme = SubResource("Theme_nnf6g")
+text = "< Notepad"
+
+[node name="Control3" type="Control" parent="notepad_ui/notepad/notepad_extra/HBoxContainer" unique_id=77257649]
+custom_minimum_size = Vector2(15, 0)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="notepad_ui/notepad/notepad_extra/HBoxContainer" unique_id=715823954]
+layout_mode = 2
+text = "Extra"
+label_settings = SubResource("LabelSettings_jehpo")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="notepad_ui/notepad/notepad_extra" unique_id=1606731392]
+custom_minimum_size = Vector2(0, 370)
+layout_mode = 2
+follow_focus = true
+horizontal_scroll_mode = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="notepad_ui/notepad/notepad_extra/ScrollContainer" unique_id=77021599]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("5_6asec")
+
+[node name="screenersuperHD" type="TextureRect" parent="notepad_ui/notepad/notepad_extra/ScrollContainer/VBoxContainer" unique_id=1133928113]
+custom_minimum_size = Vector2(0, 290)
+layout_mode = 2
+texture = ExtResource("4_nnf6g")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="b" type="HBoxContainer" parent="notepad_ui/notepad/notepad_extra/ScrollContainer/VBoxContainer" unique_id=988748619]
+layout_mode = 2
+alignment = 1
+
+[node name="abaluga" type="Label" parent="notepad_ui/notepad/notepad_extra/ScrollContainer/VBoxContainer/b" unique_id=123646134]
+layout_mode = 2
+text = "1/2"
+label_settings = SubResource("LabelSettings_6asec")
+
+[node name="a" type="HBoxContainer" parent="notepad_ui/notepad/notepad_extra/ScrollContainer/VBoxContainer" unique_id=2025276566]
+layout_mode = 2
+alignment = 1
+
+[node name="prev" type="HBoxContainer" parent="notepad_ui/notepad/notepad_extra/ScrollContainer/VBoxContainer/a" unique_id=781388999]
+layout_mode = 2
+
+[node name="prev_image" type="Button" parent="notepad_ui/notepad/notepad_extra/ScrollContainer/VBoxContainer/a/prev" unique_id=2006689437]
+custom_minimum_size = Vector2(35, 20)
+layout_mode = 2
+theme = ExtResource("5_grqne")
+text = "<"
+
+[node name="image" type="HBoxContainer" parent="notepad_ui/notepad/notepad_extra/ScrollContainer/VBoxContainer/a" unique_id=444637851]
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+alignment = 1
+
+[node name="image_name" type="Label" parent="notepad_ui/notepad/notepad_extra/ScrollContainer/VBoxContainer/a/image" unique_id=597006546]
+layout_mode = 2
+text = "Hotel map"
+label_settings = SubResource("LabelSettings_grqne")
+
+[node name="next" type="HBoxContainer" parent="notepad_ui/notepad/notepad_extra/ScrollContainer/VBoxContainer/a" unique_id=835458953]
+layout_mode = 2
+
+[node name="next_image" type="Button" parent="notepad_ui/notepad/notepad_extra/ScrollContainer/VBoxContainer/a/next" unique_id=1667382872]
+custom_minimum_size = Vector2(35, 20)
+layout_mode = 2
+theme = ExtResource("5_grqne")
+text = ">"
+
+[node name="zappy_ui" type="CanvasLayer" parent="." unique_id=2062680708]
+visible = false
+
+[node name="zappy" type="TextureRect" parent="zappy_ui" unique_id=1320278433]
+offset_top = 319.0
+offset_right = 436.0
+offset_bottom = 646.0
+texture = ExtResource("9_4lgsy")
+
+[node name="Label" type="Label" parent="zappy_ui" unique_id=936164555]
+offset_left = 719.0
+offset_top = 591.0
+offset_right = 1152.0
+offset_bottom = 649.0
+text = "Press Space to return"
+label_settings = SubResource("LabelSettings_4lgsy")
+
+[node name="zappy_shoot" type="AudioStreamPlayer2D" parent="." unique_id=337116603]
+stream = ExtResource("10_c0ahb")
+volume_db = 10.0
+
+[node name="scream" type="AudioStreamPlayer2D" parent="." unique_id=804903756]
+stream = ExtResource("11_0mwk0")
+
+[node name="temperature_timer" type="Timer" parent="." unique_id=850115031]
+wait_time = 0.3
+autostart = true
+
+[node name="label_flash_timer" type="Timer" parent="." unique_id=912266136]
+wait_time = 0.15
+autostart = true
+
+[node name="fire_obj" type="Sprite2D" parent="." unique_id=9218989]
+visible = false
+position = Vector2(578, 322.50006)
+scale = Vector2(0.578, 0.32050005)
+texture = ExtResource("12_x8sd0")
+
+[node name="fail" type="Timer" parent="." unique_id=1143879149]
+wait_time = 3.0
+
+[node name="scary_thing" type="Sprite2D" parent="." unique_id=191604086]
+visible = false
+scale = Vector2(0.60052085, 0.59907407)
+texture = ExtResource("13_x8sd0")
+centered = false
+
+[connection signal="pressed" from="attack_info/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="buttons/show_zappy" to="." method="_on_show_zappy_pressed"]
+[connection signal="pressed" from="buttons/show_notepad" to="." method="_on_show_notepad_pressed"]
+[connection signal="pressed" from="notepad_ui/notepad/notepad_main/HBoxContainer/back_button" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="notepad_ui/notepad/notepad_main/attacks_notepad_button" to="notepad_ui/notepad" method="_on_attacks_notepad_button_pressed"]
+[connection signal="pressed" from="notepad_ui/notepad/notepad_main/about_notepad_button" to="notepad_ui/notepad" method="_on_about_notepad_button_pressed"]
+[connection signal="pressed" from="notepad_ui/notepad/notepad_main/extra_notepad_button" to="notepad_ui/notepad" method="_on_extra_notepad_button_pressed"]
+[connection signal="pressed" from="notepad_ui/notepad/notepad_attacks/HBoxContainer/VBoxContainer/back_to_notepad_button" to="notepad_ui/notepad" method="_on_back_to_notepad_button_pressed"]
+[connection signal="pressed" from="notepad_ui/notepad/notepad_about/HBoxContainer/VBoxContainer/back_to_notepad_button2" to="notepad_ui/notepad" method="_on_back_to_notepad_button_pressed"]
+[connection signal="pressed" from="notepad_ui/notepad/notepad_extra/HBoxContainer/VBoxContainer/back_to_notepad_button3" to="notepad_ui/notepad" method="_on_back_to_notepad_button_pressed"]
+[connection signal="pressed" from="notepad_ui/notepad/notepad_extra/ScrollContainer/VBoxContainer/a/prev/prev_image" to="notepad_ui/notepad/notepad_extra/ScrollContainer/VBoxContainer" method="_on_prev_image_pressed"]
+[connection signal="pressed" from="notepad_ui/notepad/notepad_extra/ScrollContainer/VBoxContainer/a/next/next_image" to="notepad_ui/notepad/notepad_extra/ScrollContainer/VBoxContainer" method="_on_next_image_pressed"]
+[connection signal="timeout" from="temperature_timer" to="." method="_on_temperature_timer_timeout"]
+[connection signal="timeout" from="label_flash_timer" to="." method="_on_label_flash_timer_timeout"]
+[connection signal="timeout" from="fail" to="." method="_on_fail_timeout"]
